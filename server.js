@@ -28,7 +28,7 @@ app.get('/hello', function(req, res){
 
 app.post('/api/fileanalyse', upload.single('upfile'), function (req, res, next) {
   const file = req.file;
-  const fileSize = file.filesize
+  const fileSize = file.size
   console.log(fileSize);
   res.send(fileSize);
   // res.send('Done');
