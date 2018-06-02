@@ -18,9 +18,11 @@ app.use(bodyParser.urlencoded({extended:false})); //handle body requests
 app.use(bodyParser.json()); // let's make JSON work too!
 
 app.use(morgan('tiny'));
+app.set('views', './src/views');
+app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-     res.render('src/views/index.ejs');
+     res.render('index');
   });
 
 app.get('/hello', function(req, res){
