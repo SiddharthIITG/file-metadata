@@ -5,6 +5,7 @@ var cors = require('cors');
 var morgan = require('morgan');
 var debug = require('debug');
 var bodyParser = require('body-parser');
+var ejs = require('ejs');
 var multer = require('multer');
 var upload = multer();
 // require and use "multer"...
@@ -19,7 +20,7 @@ app.use(bodyParser.json()); // let's make JSON work too!
 app.use(morgan('tiny'));
 
 app.get('/', function (req, res) {
-     res.sendFile(process.cwd() + '/views/index.html');
+     res.render('src/views/index.ejs');
   });
 
 app.get('/hello', function(req, res){
