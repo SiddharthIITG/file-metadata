@@ -33,12 +33,8 @@ app.post('/api/fileanalyse', upload.single('upfile'), function (req, res, next) 
   const file = req.file;
   const fileSize = file.size;
   const fileName = file.originalname;
-  var jsonObj = JSON.stringify({filename: fileName, size: fileSize});
-  console.log(fileSize);
-  // res.send(fileSize);
+  var jsonObj = JSON.stringify({Filename: fileName, Size: fileSize}, null, 2);
   res.render('metadata', {jsonObj: jsonObj});
-  
-  // res.send('Done');
 })
 
 app.listen(process.env.PORT || 3000, function () {
